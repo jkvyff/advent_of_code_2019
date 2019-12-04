@@ -20,4 +20,8 @@ intersect = first.keys() & second.keys()
 closestIntersect = min([point for point in intersect], key=lambda x: abs(x[0]) + abs(x[1]))
 manhattan = abs(closestIntersect[0]) + abs(closestIntersect[1])
 
+shortestPathIntersect = min(intersect, key=lambda x: first[x] + second[x])
+steps = first[shortestPathIntersect] + second[shortestPathIntersect]
+
 print("Part One:", manhattan)
+print("Part Two:", steps)
